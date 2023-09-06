@@ -1,7 +1,8 @@
 out
 .idea
 *.iml
-
+.eml
+.userlibraries
 ### IntelliJ IDEA ###
 out/
 !**/src/main/**/out/
