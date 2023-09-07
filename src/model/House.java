@@ -5,27 +5,30 @@ import java.util.Scanner;
 public class House extends Financial {
     double discount;
 
-    public House(double propertyValue, int financialTerm, double annualRate) {
+    double constructedArea;
+
+    double sizePlot;
+
+    public House(double propertyValue, int financialTerm, double annualRate, double constructedArea, double sizePlot) {
         super(propertyValue, financialTerm, annualRate);
+        this.constructedArea = constructedArea;
+        this.sizePlot = sizePlot;
     }
 
-    public House(double propertyValue, int financialTerm, double annualRate, double discount) {
+    public House(double propertyValue, int financialTerm, double annualRate, double constructedArea, double sizePlot, double discount) {
         super(propertyValue, financialTerm, annualRate);
-        this.discount = discount;
-    }
+        this.constructedArea = constructedArea;
+        this.sizePlot = sizePlot;
 
-    public static double discount(Scanner sc) {
-        System.out.println("Type discount for a house: ");
-        double discount = sc.nextDouble();
-        while (discount <= 0 || discount > 100) {
-            if (discount >= 100) {
-                System.out.print("The value is too big\nType it other discount: U$ ");
-            } else {
-                System.out.print("Value has to be greater\nType it other discount: U$ ");
-            }
-            discount = sc.nextDouble();
+        if (discount > 100) {
+            System.out.println("The discount has overcome the limit, has been defined 100");
+            this.discount = 100;
+        } else if (discount <= 0) {
+            System.out.println("The discount was below the minimum rate, it was modified to the minimum of 0.01");
+            this.discount = 0.01;
+        } else {
+            this.discount = discount;
         }
-        return discount;
     }
 
     @Override

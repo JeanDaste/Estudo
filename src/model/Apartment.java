@@ -1,8 +1,15 @@
 package model;
 
 public class Apartment extends Financial {
-    public Apartment(double propertyValue, int financialTerm, double annualRate) {
+
+    int parkingSpot;
+
+    int floor;
+
+    public Apartment(double propertyValue, int financialTerm, double annualRate, int parkingSpot, int floor) {
         super(propertyValue, financialTerm, annualRate);
+        this.parkingSpot = parkingSpot;
+        this.floor = floor;
     }
 
     @Override

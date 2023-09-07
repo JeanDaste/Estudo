@@ -1,8 +1,11 @@
 package model;
-public class Financial {
+public abstract class Financial {
     private double propertyValue;
+
     private int financialTerm;
+
     private double annualRate;
+
     public Financial(double propertyValue, int financialTerm, double annualRate) {
         this.propertyValue = propertyValue;
         this.financialTerm = financialTerm;
@@ -28,5 +31,4 @@ public class Financial {
     public double getAnnualRate() {
         return annualRate;
     }
-
 }

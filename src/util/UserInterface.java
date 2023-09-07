@@ -34,7 +34,7 @@ public class UserInterface {
         System.out.print("Type it annual interest rate: ");
         double rate = sc.nextDouble();
         while (rate <= 0 || rate >= 40) { //Maximo de juros já registrado no EUA foi de 40% ao ano, este é o limite
-            if (rate <= 0){
+            if (rate <= 0) {
                 System.out.print("Value has to be greater\nType it other annual interest rate: ");
             } else {
                 System.out.print("The value is too big\nType it other annual interest rate: ");
@@ -42,5 +42,19 @@ public class UserInterface {
             rate = sc.nextDouble();
         }
         return rate;
+    }
+
+    public static double discount(Scanner sc) {
+        System.out.print("Type discount for a house: ");
+        double discount = sc.nextDouble();
+        while (discount <= 0 || discount > 100) {
+            if (discount >= 100) {
+                System.out.print("The value is too big\nType it other discount: U$ ");
+            } else {
+                System.out.print("Value has to be greater\nType it other discount: U$ ");
+            }
+            discount = sc.nextDouble();
+        }
+        return discount;
     }
 }

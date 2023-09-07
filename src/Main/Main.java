@@ -7,20 +7,26 @@ import java.util.Scanner;
 import model.*;
 
 public class Main {
+
     public static void main(String[] args) {
+
         ArrayList<Financial> financials = new ArrayList<>();
         double propertyValue = 0;
         double totalPayment = 0;
         int count = 1;
 
-        House user1 = new House(100000, 160, 10, 100);
-        House user2 = new House(100000, 160, 10);
-        Apartment user3 = new Apartment(250000, 360, 10);
-        Apartment user4 = new Apartment(250000, 360, 10);
-
         Scanner sc = new Scanner(System.in);
-        Plot user5 = new Plot(UserInterface.propertyValue(sc), UserInterface.financialTerm(sc), UserInterface.annualRate(sc));
+        House user1 = new House(UserInterface.propertyValue(sc), UserInterface.financialTerm(sc),
+                UserInterface.annualRate(sc), 100, 120, UserInterface.discount(sc));
         sc.close();
+
+        House user2 = new House(100000, 160, 10, 100, 120);
+
+        Apartment user3 = new Apartment(250000, 360, 10, 2, 16);
+
+        Apartment user4 = new Apartment(250000, 360, 10, 1, 15);
+
+        Plot user5 = new Plot(100000, 320, 10, "Residential");
 
         financials.add(user1);
         financials.add(user2);
