@@ -3,11 +3,11 @@ package model;
 import java.util.Scanner;
 
 public class House extends Financial {
-    double discount;
+    private double discount;
 
-    double constructedArea;
+    private double constructedArea;
 
-    double sizePlot;
+    private double sizePlot;
 
     public House(double propertyValue, int financialTerm, double annualRate, double constructedArea, double sizePlot) {
         super(propertyValue, financialTerm, annualRate);
@@ -15,7 +15,8 @@ public class House extends Financial {
         this.sizePlot = sizePlot;
     }
 
-    public House(double propertyValue, int financialTerm, double annualRate, double constructedArea, double sizePlot, double discount) {
+    public House(double propertyValue, int financialTerm, double annualRate, double constructedArea,
+                 double sizePlot, double discount) {
         super(propertyValue, financialTerm, annualRate);
         this.constructedArea = constructedArea;
         this.sizePlot = sizePlot;
@@ -41,9 +42,21 @@ public class House extends Financial {
         double payment = super.totalPayment() - (getFinancialTerm() * discount);
         if (payment <= 0) {
             return 0.00;
-        }
-        else {
+        } else {
             return payment;
         }
-}
+
+
+    }
+    public double getDiscount() {
+        return discount;
+    }
+
+    public double getConstructedArea() {
+        return constructedArea;
+    }
+
+    public double getSizePlot() {
+        return sizePlot;
+    }
 }

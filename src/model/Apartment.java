@@ -2,9 +2,9 @@ package model;
 
 public class Apartment extends Financial {
 
-    int parkingSpot;
+    private int parkingSpot;
 
-    int floor;
+    private int floor;
 
     public Apartment(double propertyValue, int financialTerm, double annualRate, int parkingSpot, int floor) {
         super(propertyValue, financialTerm, annualRate);
@@ -20,4 +20,14 @@ public class Apartment extends Financial {
         }
         return super.totalPayment() + value;
     }
+
+
+    public int getParkingSpot() {
+        return parkingSpot;
+    }
+
+    public int getFloor() {
+        return floor;
+    }
+
 }

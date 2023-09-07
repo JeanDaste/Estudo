@@ -33,7 +33,7 @@ public class UserInterface {
     public static double annualRate(Scanner sc) {
         System.out.print("Type it annual interest rate: ");
         double rate = sc.nextDouble();
-        while (rate <= 0 || rate >= 40) { //Maximo de juros já registrado no EUA foi de 40% ao ano, este é o limite
+        while (rate <= 0 || rate > 40) { //Maximo de juros já registrado no EUA foi de 40% ao ano, este é o limite
             if (rate <= 0) {
                 System.out.print("Value has to be greater\nType it other annual interest rate: ");
             } else {
@@ -45,13 +45,13 @@ public class UserInterface {
     }
 
     public static double discount(Scanner sc) {
-        System.out.print("Type discount for a house: ");
+        System.out.print("Type discount: ");
         double discount = sc.nextDouble();
         while (discount <= 0 || discount > 100) {
             if (discount >= 100) {
-                System.out.print("The value is too big\nType it other discount: U$ ");
+                System.out.print("The discount has overcome the limit\nType it other discount: U$ ");
             } else {
-                System.out.print("Value has to be greater\nType it other discount: U$ ");
+                System.out.print("The discount was below the minimum rate\nType it other discount: U$ ");
             }
             discount = sc.nextDouble();
         }
