@@ -1,6 +1,7 @@
 package Main;
 
 import util.UserInterface;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -45,7 +46,7 @@ public class Main {
             count++;
         }
 
-        System.out.printf("The total value of the properties is: U$ %.2f\n" , propertyValue);
+        System.out.printf("The total value of the properties is: U$ %.2f\n", propertyValue);
         System.out.printf("The total value of the properties with financing is: U$ %.2f\n", totalPayment);
     }
 }

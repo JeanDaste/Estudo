@@ -1,7 +1,5 @@
 package model;
 
-import java.util.Scanner;
-
 public class House extends Financial {
     private double discount;
 
@@ -34,12 +32,12 @@ public class House extends Financial {
 
     @Override
     public double monthlyPay() {
-        return super.monthlyPay() - discount;
+        return super.monthlyPay() - getDiscount();
     }
 
     @Override
     public double totalPayment() {
-        double payment = super.totalPayment() - (getFinancialTerm() * discount);
+        double payment = super.totalPayment() - (getFinancialTerm() * getDiscount());
         if (payment <= 0) {
             return 0.00;
         } else {
@@ -48,6 +46,7 @@ public class House extends Financial {
 
 
     }
+
     public double getDiscount() {
         return discount;
     }
@@ -58,5 +57,17 @@ public class House extends Financial {
 
     public double getSizePlot() {
         return sizePlot;
+    }
+
+    public void setDiscount(double discount) {
+        this.discount = discount;
+    }
+
+    public void setConstructedArea(double constructedArea) {
+        this.constructedArea = constructedArea;
+    }
+
+    public void setSizePlot(double sizePlot) {
+        this.sizePlot = sizePlot;
     }
 }

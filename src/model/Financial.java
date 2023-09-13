@@ -1,4 +1,5 @@
 package model;
+
 public abstract class Financial {
     private double propertyValue;
 
@@ -7,6 +8,11 @@ public abstract class Financial {
     private double annualRate;
 
     public Financial(double propertyValue, int financialTerm, double annualRate) {
+        if (propertyValue >= 500000000) {
+            throw new RuntimeException("The value is higher than the estimated limit\nType it other value of property: U$ ");
+        } else if (propertyValue <= 0) {
+            throw new RuntimeException("The value has to be greater\nType it other value of property: U$ ");
+        }
         this.propertyValue = propertyValue;
         this.financialTerm = financialTerm;
         this.annualRate = annualRate;
@@ -30,5 +36,17 @@ public abstract class Financial {
 
     public double getAnnualRate() {
         return annualRate;
+    }
+
+    public void setPropertyValue(double propertyValue) {
+        this.propertyValue = propertyValue;
+    }
+
+    public void setFinancialTerm(int financialTerm) {
+        this.financialTerm = financialTerm;
+    }
+
+    public void setAnnualRate(double annualRate) {
+        this.annualRate = annualRate;
     }
 }

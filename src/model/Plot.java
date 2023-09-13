@@ -9,7 +9,6 @@ public class Plot extends Financial {
         this.area = area;
     }
 
-
     @Override
     public double monthlyPay() {
         return super.monthlyPay() * 1.02;
@@ -23,4 +22,9 @@ public class Plot extends Financial {
     public String getArea() {
         return area;
     }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
 }

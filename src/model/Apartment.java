@@ -15,7 +15,7 @@ public class Apartment extends Financial {
     @Override
     public double totalPayment() {
         double value = 0;
-        for (int i = 1; i <= getFinancialTerm() ; i++){
+        for (int i = 1; i <= getFinancialTerm(); i++) {
             value += ((getAnnualRate() / i) / 100) * monthlyPay();
         }
         return super.totalPayment() + value;
@@ -30,4 +30,11 @@ public class Apartment extends Financial {
         return floor;
     }
 
+    public void setParkingSpot(int parkingSpot) {
+        this.parkingSpot = parkingSpot;
+    }
+
+    public void setFloor(int floor) {
+        this.floor = floor;
+    }
 }
