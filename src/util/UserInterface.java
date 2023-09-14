@@ -11,16 +11,16 @@ public class UserInterface {
             try {
                 value = sc.nextDouble();
                 if (value >= 500000000) {
-                    throw new RuntimeException("The value is higher than the estimated limit");
+                    throw new IllegalArgumentException("The value is higher than the estimated limit");
                 } else if (value <= 0) {
-                    throw new RuntimeException("The value has to be greater");
+                    throw new IllegalArgumentException("The value has to be greater");
                 }
                 break;
             } catch (InputMismatchException e) {
                 System.out.println("This is not a number valid");
                 System.out.print("Type other value of property: ");
                 sc.next();
-            } catch (RuntimeException e) {
+            } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
                 System.out.print("Type other value of property: ");
             }
@@ -35,9 +35,9 @@ public class UserInterface {
             try {
                 term = sc.nextInt();
                 if (term <= 0) {
-                    throw new RuntimeException("Value has to be greater\n");
+                    throw new IllegalArgumentException("Value has to be greater\n");
                 } else if (term >= 968) {
-                    throw new RuntimeException("The value is too big\n");
+                    throw new IllegalArgumentException("The value is too big\n");
                 }
                 break;
 
@@ -46,7 +46,7 @@ public class UserInterface {
                 System.out.print("Type other time of financing in monthly: ");
                 sc.next();
 
-            } catch (RuntimeException e) {
+            } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
                 System.out.print("Type other time of financing in monthly: ");
             }
@@ -61,9 +61,9 @@ public class UserInterface {
             try {
                 rate = sc.nextDouble();
                 if (rate <= 0) {
-                    throw new RuntimeException("Value has to be greater\n");
+                    throw new IllegalArgumentException("Value has to be greater\n");
                 } else if (rate > 40) {
-                    throw new RuntimeException("The value is too big\n");
+                    throw new IllegalArgumentException("The value is too big\n");
                 }
                 break;
             } catch (InputMismatchException e) {
@@ -71,7 +71,7 @@ public class UserInterface {
                 System.out.print("Type it other annual interest rate: ");
                 sc.next();
 
-            } catch (RuntimeException e) {
+            } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
                 System.out.print("Type it other annual interest rate:");
             }
@@ -85,10 +85,10 @@ public class UserInterface {
         while (true) { // Maximo de desconto pré-definido
             try {
                 discount = sc.nextDouble();
-                if (discount >= 100) {
-                    throw new RuntimeException("The discount has overcome the limit\n");
+                if (discount > 100) {
+                    throw new IllegalArgumentException("The discount has overcome the limit\n");
                 } else if (discount <= 0) {
-                    throw new RuntimeException("The discount was below the minimum rate\n");
+                    throw new IllegalArgumentException("The discount was below the minimum rate\n");
                 }
                 break;
             } catch (InputMismatchException e) {
@@ -96,7 +96,7 @@ public class UserInterface {
                 System.out.print("Type other discount: U$ ");
                 sc.next();
 
-            } catch (RuntimeException e) {
+            } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
                 System.out.print("Type other discount: U$ ");
             }

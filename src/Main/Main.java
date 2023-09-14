@@ -9,16 +9,18 @@ import model.*;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         ArrayList<Financial> financials = new ArrayList<>();
         double propertyValue = 0;
         double totalPayment = 0;
         int count = 1;
 
+
         Scanner sc = new Scanner(System.in);
         House user1 = new House(UserInterface.propertyValue(sc), UserInterface.financialTerm(sc),
                 UserInterface.annualRate(sc), 100, 120, UserInterface.discount(sc));
+        Thread.sleep(500);
         sc.close();
 
         House user2 = new House(100000, 160, 10, 100, 120);
@@ -36,6 +38,7 @@ public class Main {
         financials.add(user5);
 
         System.out.println();
+        Thread.sleep(500);
 
         for (Financial f : financials) {
             System.out.println(f.getClass().getSimpleName() + " " + count);
@@ -44,6 +47,7 @@ public class Main {
             propertyValue += f.getPropertyValue();
             totalPayment += f.totalPayment();
             count++;
+            Thread.sleep(500);
         }
 
         System.out.printf("The total value of the properties is: U$ %.2f\n", propertyValue);

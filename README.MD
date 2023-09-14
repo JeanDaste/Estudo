@@ -11,7 +11,7 @@
 ## Versão atual:
 
 * Entrega da semana 4,5 | Data entrega: 31/08/23
-* Modificação para semana 6 | Data modificada 06/09/23
-* Modificação primeira parte semana 7 | Data modificada: 12/09/23
+* Modificação semana 6 | Data modificada 06/09/23
+* Modificação semana 7 | Data modificada: 13/09/23
 
 ***

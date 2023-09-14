@@ -1,5 +1,9 @@
 package model;
 
+import util.UserInterface;
+
+import java.util.Scanner;
+
 public abstract class Financial {
     private double propertyValue;
 
@@ -7,6 +11,13 @@ public abstract class Financial {
 
     private double annualRate;
 
+
+    public Financial(Scanner sc) {
+        this.propertyValue = UserInterface.propertyValue(sc);
+        this.financialTerm = UserInterface.financialTerm(sc);
+        this.annualRate = UserInterface.annualRate(sc);
+
+    }
     public Financial(double propertyValue, int financialTerm, double annualRate) {
         if (propertyValue >= 500000000) {
             throw new RuntimeException("The value is higher than the estimated limit\nType it other value of property: U$ ");

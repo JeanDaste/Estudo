@@ -1,9 +1,11 @@
 package model;
-
+import java.util.Scanner;
 public class Plot extends Financial {
 
     private String area;
-
+    public Plot(Scanner sc) {
+        super(sc);
+    }
     public Plot(double propertyValue, int financialTerm, double annualRate, String area) {
         super(propertyValue, financialTerm, annualRate);
         this.area = area;

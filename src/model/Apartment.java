@@ -1,11 +1,16 @@
 package model;
 
+import java.util.Scanner;
+
 public class Apartment extends Financial {
 
     private int parkingSpot;
 
     private int floor;
 
+    public Apartment(Scanner sc) {
+        super(sc);
+    }
     public Apartment(double propertyValue, int financialTerm, double annualRate, int parkingSpot, int floor) {
         super(propertyValue, financialTerm, annualRate);
         this.parkingSpot = parkingSpot;
