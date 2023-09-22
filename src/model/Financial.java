@@ -2,9 +2,10 @@ package model;
 
 import util.UserInterface;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
-public abstract class Financial {
+public abstract class Financial implements Serializable {
     private double propertyValue;
 
     private int financialTerm;
@@ -50,6 +51,7 @@ public abstract class Financial {
     }
 
     public void setPropertyValue(double propertyValue) {
+
         this.propertyValue = propertyValue;
     }
 
